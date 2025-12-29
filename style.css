@@ -17,7 +17,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-image: linear-gradient(to bottom left, #f09410, #bc430d);
 }
 
 .navbar {
@@ -66,8 +66,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 150px 500px 50px 10px;
-    
+    margin: 200px 500px 190px 10px;
 }
 
 .container-text {
@@ -91,10 +90,81 @@ body {
     }
 }
 
+.order-button::before, .order-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    background-image: conic-gradient(from var(--angle), transparent, #f79321);
+    translate: -163% 129%;
+    width: 155px;
+    height: 45px;
+    z-index: -1;
+    animation: 3s spin linear infinite;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
 .order-button:hover {
     background-color: #242322;
     a {
         color: #f79321;
     }
+}
+
+.produk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-top: 90px;
+    padding-bottom: 70px;
+    background-color: white;
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    padding-top: 20px;
+    justify-content: space-between;
+    background-color: #f79321;
+}
+
+.foot-logo {
+    display: flex;
+    translate: 20px;
+}
+
+.foot-logo img{
+    height: 50px;
+}
+
+.footer ul {
+    padding-right: 30px;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+
+.footer a {
+    color: #242322;
 }
 
