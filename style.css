@@ -90,6 +90,35 @@ body {
     }
 }
 
+.order-button::before, .order-button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 15px;
+    background-image: conic-gradient(from var(--angle), transparent, #f79321);
+    translate: -163% 129%;
+    width: 155px;
+    height: 45px;
+    z-index: -1;
+    animation: 3s spin linear infinite;
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
 .order-button:hover {
     background-color: #242322;
     a {
