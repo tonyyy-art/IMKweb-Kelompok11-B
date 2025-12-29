@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scrollable Container</title>
+  <style>
+    .scroll-container {
+      width: 300px;              /* fixed width */
+      height: 200px;             /* fixed height */
+      border: 2px solid #333;    /* border for visibility */
+      padding: 10px;
+      overflow-y: auto;          /* enables vertical scroll */
+      overflow-x: hidden;        /* hides horizontal scroll */
+      background: #f9f9f9;
+    }
+
+    .item {
+      margin: 10px 0;
+      padding: 8px;
+      background: #e0e0e0;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Scrollable Container Example</h2>
+  <div class="scroll-container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+    <div class="item">Item 6</div>
+    <div class="item">Item 7</div>
+    <div class="item">Item 8</div>
+    <div class="item">Item 9</div>
+    <div class="item">Item 10</div>
+  </div>
+</body>
+</html>
