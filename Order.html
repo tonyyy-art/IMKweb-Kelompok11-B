@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Order.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <title>Order</title>
+</head>
+<body>
+    <nav class="navbar">
+        <img src="image/logo.png" alt="" class="image-logo">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Faq</a></li>
+            <li><a href="#">Information</a></li>
+        </ul>
+    </nav>
+    <div class="header">
+        <div class="box-progres"><p>Order</p></div>
+        <div class="box-progres"><p>Payment</p></div>
+        <div class="box-progres"><p>Receipt</p></div>
+    </div>
+
+    <div class="Form">
+        <div class="box-input">
+            <label for="Nama">Nama</label>
+            <input type="text" class="input-text">
+        </div>
+        <div class="box-input">
+            <label for="NIM">NIM</label>
+            <input type="text" class="input-text">
+        </div>
+        <div class="box-input">
+            <label for="Phone">No Telp</label>
+            <input type="text">
+        </div>
+        <div class="box-input">
+            <label for="Size">Ukuran</label>
+            <select name="Size" id="sizeId">
+                <option disabled value>Pilih Ukuran</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+            </select>
+        </div>
+
+        <div><button>Order</button></div>
+    </div>
+
+    <div class="produk-container">
+        <div class="image-box">
+            <img src="image/produk.png" alt="">
+        </div>
+
+        <div class="produk-info">
+            <div class="infor-header">
+                <span>Jaket Hitam 2025</span>
+                <span>150.000</span>
+            </div class="sub-info">
+                <span>Sub Tota</span>
+                <span>Rp 150.000</span>
+            </div>
+            <div class="sub-info">
+                <span>Fee</span>
+                <span> Rp 0</span>
+            </div>
+            <div class="sub-info">
+                <span>Total</span>
+                <span>Rp 150.000</span>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
