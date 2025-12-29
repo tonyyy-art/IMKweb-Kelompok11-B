@@ -1,0 +1,442 @@
+<html lang="en" class=" ">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<title inertia="">Jaket Lab Informatika</title>
+		
+		<!-- Fonts -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&amp;display=swap">
+		
+		<!-- Styles -->
+		<link rel="stylesheet" href="https://infotech.umm.ac.id/jacketlab/css/app.css">
+		
+		<!-- Scripts -->
+		<style>
+			.wrapper {
+            border: 1px solid #ccc;
+            font-family: Helvetica;
+            font-size: 14px;
+            width: 330px
+			}
+			
+			.StepProgress {
+            list-style: none;
+            padding-left: 45px;
+            position: relative
+			}
+			
+			.StepProgress:before {
+            border-left: 2px solid #ccc;
+            content: "";
+            display: inline-block;
+            height: 100%;
+            left: 15px;
+            position: absolute;
+            top: 0;
+            width: 10px
+			}
+			
+			.StepProgress-item {
+            counter-increment: list;
+            position: relative
+			}
+			
+			.StepProgress-item:not(:last-child) {
+            padding-bottom: 20px
+			}
+			
+			.StepProgress-item:before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            left: -30px;
+            position: absolute;
+            width: 10px
+			}
+			
+			.StepProgress-item:after {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            content: "";
+            display: inline-block;
+            height: 12px;
+            left: -37px;
+            position: absolute;
+            top: 0;
+            width: 12px
+			}
+			
+			.StepProgress-item.is-done:before {
+            border-left: 2px solid #023b70
+			}
+			
+			.StepProgress-item.is-done:after {
+            background-color: #023b70;
+            border: 2px solid #023b70
+			}
+			
+			.StepProgress-item.current:before {
+            border-left: 2px solid #023b70
+			}
+			
+			.StepProgress-item.current:after {
+            background-color: #fff;
+            border: 2px solid #023b70;
+            color: #023b70;
+            font-size: 14px;
+            height: 18px;
+            left: -40px;
+            text-align: center;
+            top: -4px;
+            width: 19px
+			}
+			
+			.StepProgress strong {
+            display: block
+			}
+		</style>
+		<style type="text/css">
+			#nprogress {
+            pointer-events: none;
+			}
+			
+			#nprogress .bar {
+            background: #4B5563;
+			
+            position: fixed;
+            z-index: 1031;
+            top: 0;
+            left: 0;
+			
+            width: 100%;
+            height: 2px;
+			}
+			
+			#nprogress .peg {
+            display: block;
+            position: absolute;
+            right: 0px;
+            width: 100px;
+            height: 100%;
+            box-shadow: 0 0 10px #4B5563, 0 0 5px #4B5563;
+            opacity: 1.0;
+			
+            -webkit-transform: rotate(3deg) translate(0px, -4px);
+            -ms-transform: rotate(3deg) translate(0px, -4px);
+            transform: rotate(3deg) translate(0px, -4px);
+			}
+			
+			#nprogress .spinner {
+            display: block;
+            position: fixed;
+            z-index: 1031;
+            top: 15px;
+            right: 15px;
+			}
+			
+			#nprogress .spinner-icon {
+            width: 18px;
+            height: 18px;
+            box-sizing: border-box;
+			
+            border: solid 2px transparent;
+            border-top-color: #4B5563;
+            border-left-color: #4B5563;
+            border-radius: 50%;
+			
+            -webkit-animation: nprogress-spinner 400ms linear infinite;
+            animation: nprogress-spinner 400ms linear infinite;
+			}
+			
+			.nprogress-custom-parent {
+            overflow: hidden;
+            position: relative;
+			}
+			
+			.nprogress-custom-parent #nprogress .spinner,
+			.nprogress-custom-parent #nprogress .bar {
+            position: absolute;
+			}
+			
+			@-webkit-keyframes nprogress-spinner {
+            0% {
+			-webkit-transform: rotate(0deg);
+            }
+			
+            100% {
+			-webkit-transform: rotate(360deg);
+            }
+			}
+			
+			@keyframes nprogress-spinner {
+            0% {
+			transform: rotate(0deg);
+            }
+			
+            100% {
+			transform: rotate(360deg);
+            }
+			}
+		</style>
+		<style>
+			.carousel__icon {
+            fill: currentColor;
+            height: var(--vc-icn-width);
+            width: var(--vc-icn-width)
+			}
+			
+			:root {
+            --vc-clr-primary: #000;
+            --vc-clr-secondary: #090f207f;
+            --vc-clr-white: #fff;
+            --vc-icn-width: 1.2em;
+            --vc-nav-width: 30px;
+            --vc-nav-height: 30px;
+            --vc-nav-border-radius: 0;
+            --vc-nav-color: var(--vc-clr-primary);
+            --vc-nav-color-hover: var(--vc-clr-secondary);
+            --vc-nav-background: transparent;
+            --vc-pgn-width: 12px;
+            --vc-pgn-height: 4px;
+            --vc-pgn-margin: 4px;
+            --vc-pgn-border-radius: 0;
+            --vc-pgn-background-color: var(--vc-clr-secondary);
+            --vc-pgn-active-color: var(--vc-clr-primary)
+			}
+			
+			.carousel {
+            position: relative;
+            text-align: center
+			}
+			
+			.carousel,
+			.carousel * {
+            box-sizing: border-box
+			}
+			
+			.carousel__track {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            position: relative
+			}
+			
+			.carousel__viewport {
+            overflow: hidden
+			}
+			
+			.carousel__sr-only {
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px
+			}
+			
+			.carousel__slide {
+            align-items: center;
+            display: flex;
+            flex-shrink: 0;
+            justify-content: center;
+            margin: 0;
+            position: relative;
+            scroll-snap-stop: auto;
+            transform: translateZ(0)
+			}
+			
+			.carousel__pagination {
+            display: flex;
+            justify-content: center;
+            line-height: 0;
+            list-style: none;
+            margin: 10px 0 0
+			}
+			
+			.carousel__pagination-button {
+            background: transparent;
+            border: 0;
+            cursor: pointer;
+            display: block;
+            margin: 0;
+            padding: var(--vc-pgn-margin)
+			}
+			
+			.carousel__pagination-button:after {
+            background-color: var(--vc-pgn-background-color);
+            border-radius: var(--vc-pgn-border-radius);
+            content: "";
+            display: block;
+            height: var(--vc-pgn-height);
+            width: var(--vc-pgn-width)
+			}
+			
+			.carousel__pagination-button--active:after,
+			.carousel__pagination-button:hover:after {
+            background-color: var(--vc-pgn-active-color)
+			}
+			
+			.carousel__next,
+			.carousel__prev {
+            align-items: center;
+            background: var(--vc-nav-background);
+            border: 0;
+            border-radius: var(--vc-nav-border-radius);
+            box-sizing: content-box;
+            color: var(--vc-nav-color);
+            cursor: pointer;
+            display: flex;
+            font-size: var(--vc-nav-height);
+            height: var(--vc-nav-height);
+            justify-content: center;
+            margin: 0 10px;
+            padding: 0;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translateY(-50%);
+            width: var(--vc-nav-width)
+			}
+			
+			.carousel__next:hover,
+			.carousel__prev:hover {
+            color: var(--vc-nav-color-hover)
+			}
+			
+			.carousel__next--disabled,
+			.carousel__prev--disabled {
+            cursor: not-allowed;
+            opacity: .5
+			}
+			
+			.carousel__prev {
+            left: 0
+			}
+			
+			.carousel__next {
+            right: 0
+			}
+			
+			.carousel--rtl .carousel__prev {
+            left: auto;
+            right: 0
+			}
+			
+			.carousel--rtl .carousel__next {
+            left: 0;
+            right: auto
+			}
+		</style>
+	</head>
+	
+	<body class="font-sans antialiased">
+		<div id="app" data-page="{&quot;component&quot;:&quot;User\/LoginUser&quot;,&quot;props&quot;:{&quot;jetstream&quot;:{&quot;canCreateTeams&quot;:false,&quot;canManageTwoFactorAuthentication&quot;:true,&quot;canUpdatePassword&quot;:false,&quot;canUpdateProfileInformation&quot;:false,&quot;hasEmailVerification&quot;:false,&quot;flash&quot;:[],&quot;hasAccountDeletionFeatures&quot;:true,&quot;hasApiFeatures&quot;:false,&quot;hasTeamFeatures&quot;:false,&quot;hasTermsAndPrivacyPolicyFeature&quot;:false,&quot;managesProfilePhotos&quot;:false},&quot;user&quot;:{&quot;username&quot;:null},&quot;errorBags&quot;:[],&quot;errors&quot;:{},&quot;flash&quot;:{&quot;message&quot;:null,&quot;error&quot;:null,&quot;success&quot;:null}},&quot;url&quot;:&quot;https:\/\/infotech.umm.ac.id\/jacketlab\/masuk&quot;,&quot;version&quot;:&quot;3122b7fe0dbbd99471253795b1cce1c9&quot;}" data-v-app="">
+			<div data-headlessui-state="">
+				<div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+					<nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+						<div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+							<div class="flex items-center justify-between w-full md:w-auto"><a href="#"><span class="sr-only">Workflow</span><img alt="Workflow" class="h-20 w-auto sm:h-20" src="https://i.ibb.co/vQPjjvZ/labitputihfull.png"></a>
+								<div class="-mr-2 flex items-center md:hidden"><button class="rounded-md p-2 inline-flex items-center justify-center text-gray-400 focus:outline-none" id="headlessui-popover-button-3" type="button" aria-expanded="false" data-headlessui-state=""><span class="sr-only">Open main menu</span><svg fill="none" stroke="#000000" stroke-width="2" width="35" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5"></path>
+								</svg></button><!----></div>
+							</div>
+						</div>
+						<div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8"><a class="font-medium text-black hover:text-gray-300" href="https://infotech.umm.ac.id/jacketlab">Home</a><a class="font-medium text-black hover:text-gray-300" href="https://infotech.umm.ac.id/jacketlab/faq">Faq</a><a class="font-medium text-black hover:text-gray-300" href="https://infotech.umm.ac.id/jacketlab/timeline">Histori Pemesanan </a><a class="font-medium text-primary hover:text-indigo-500" href="https://infotech.umm.ac.id/jacketlab/keluar">Log out </a></div>
+					</nav>
+				</div><!---->
+			</div>
+			<div style="position: fixed; height: 0px; padding: 0px; overflow: hidden; clip: rect(0px, 0px, 0px, 0px); white-space: nowrap; border-width: 0px; display: none;"></div>
+			<hr class="mt-5">
+			<main>
+				<form>
+					<div class="grid md:grid-cols-2 grid-cols-1 gap-2 md:px-40">
+						<div class="md:py-12 py-6 md:mx-0 mx-5 md:pr-8">
+							<div class="w-full flex">
+								<p class="text-amber-600">Order</p>
+								<div class="flex-grow border-t border-gray-300 mt-3 mx-4 sm:block hidden"></div>
+								<p class="text-gray-500 sm:block hidden">Payment</p>
+								<div class="flex-grow border-t border-gray-300 mt-3 mx-4 sm:block hidden"></div>
+								<p class="text-gray-500 sm:block hidden">Receipt</p>
+							</div>
+							<div class="md:mt-14 mt-6">
+								<p class="font-bold">Personal Informations</p>
+								<div class="mt-6"><input type="hidden" value=""><label for="title" class="leading-7 text-sm text-gray-900">Nama</label><input type="text" class="w-full bg-opacity-40 rounded-lg border border-gray-400 focus:border-primary-100 focus:ring-1 focus:ring-primary-100 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" disabled=""></div>
+								<div class="mt-6"><label for="title" class="leading-7 text-sm text-gray-900">NIM</label><input type="text" class="w-full bg-opacity-40 rounded-lg border border-gray-400 focus:border-primary-100 focus:ring-1 focus:ring-primary-100 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" disabled=""></div>
+								<div class="mt-6"><label for="title" class="leading-7 text-sm text-gray-900">No. Telp Aktif</label><input type="text" class="w-full bg-opacity-40 rounded-lg border border-gray-400 focus:border-primary-100 focus:ring-1 focus:ring-primary-100 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"><!----></div>
+								<div class="mt-6"><label for="title" class="leading-7 text-sm text-gray-900">Size</label><select name="size" id="size" class="w-full bg-opacity-40 rounded-lg border border-gray-400 focus:border-primary-100 focus:ring-1 focus:ring-primary-100 text-base outline-none text-gray-900 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                                    <option disabled="" value="">Pilih Ukuran</option>
+								</select><!----></div><!---->
+								<div class="mt-6">
+									<p>Jumlah Stok Yang Tersedia</p>
+								</div>
+								<div class="md:block hidden">
+									<div class="flex-grow border-t border-gray-300 mt-12"></div>
+									<div class="relative">
+										<div class="flex justify-end mt-6 lg:h-12"><button class="flex items-center py-4 px-4 text-sm text-white bg-theme-primary rounded text-center" type="submit"> Complete Order </button></div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="md:py-12 pb-12 md:mx-0 mx-5">
+								<p class="font-bold">Custom Order</p>
+								<div class="mt-4 h-40 overflow-hidden"><img src="/jacketlab/storage/jackets/yyUUeG7e5agZ912UJ7kkLVqFMG83O63u5rPlgvxr.jpg" alt="" class="h-fit w-full"></div>
+								<div class="mt-4">
+									<p class="font-semibold">Jaket Hitam 2023</p>
+								</div>
+								<div class="mt-1.5">
+									<p class="font-extrabold">Rp. 150.000</p>
+								</div>
+								<div class="mt-4 text-center" style="display: none;"><button class="items-center w-full py-3 text-sm text-primary rounded text-center border-2 border-theme-primary hover:bg-orange-600 hover:text-white" type="button"> Add Custom Size </button></div>
+								<div class="mt-4">
+									<div class="flex">
+										<div class="w-1/2">
+											<p class="text-sm">Sub total</p>
+										</div>
+										<div class="w-1/2">
+											<p class="text-sm text-right">Rp. 150.000</p>
+										</div>
+									</div>
+								</div>
+								<div class="mt-4">
+									<div class="flex">
+										<div class="w-1/2">
+											<p class="text-sm">Additional Fee</p>
+										</div>
+										<div class="w-1/2">
+											<p class="text-sm text-right">Rp. 0</p>
+										</div>
+									</div>
+								</div>
+								<div class="mt-4">
+									<div class="flex">
+										<div class="w-1/2">
+											<p class="text-sm font-bold">Total</p>
+										</div>
+										<div class="w-1/2">
+											<p class="text-sm font-bold text-right">Rp. 150.000</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="block md:hidden mb-6">
+								<div class="flex-grow border-t border-gray-300"></div>
+								<div class="relative">
+									<div class="flex justify-end mt-6 lg:h-12 mr-5"><button class="flex items-center py-4 px-4 text-sm text-white bg-theme-primary rounded text-center" type="submit"> Complete Order </button></div>
+								</div>
+							</div>
+						</div>
+					</div><!----><!---->
+				</form><!---->
+			</main>
+		</div>
+		
+		
+	</body>
+	
+</html>
