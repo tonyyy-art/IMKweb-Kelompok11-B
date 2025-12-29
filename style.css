@@ -17,7 +17,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-image: linear-gradient(to bottom left, #f09410, #bc430d);
 }
 
 .navbar {
@@ -66,8 +66,7 @@ body {
     position: relative;
     display: flex;
     flex-direction: column;
-    margin: 150px 500px 50px 10px;
-    
+    margin: 200px 500px 190px 10px;
 }
 
 .container-text {
@@ -96,5 +95,39 @@ body {
     a {
         color: #f79321;
     }
+}
+
+.produk {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    padding-top: 100px;
+    padding-bottom: 30px;
+    background-color: white;
+}
+
+.footer {
+    position: relative;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.foot-logo {
+    display: flex;
+}
+
+.foot-logo img{
+    height: 50px;
+}
+
+.footer ul li {
+    list-style: none;
+}
+
+.footer a {
+    color: #242322;
 }
 
