@@ -102,8 +102,8 @@ body {
     justify-content: center;
     width: 100%;
     position: relative;
-    padding-top: 100px;
-    padding-bottom: 30px;
+    padding-top: 90px;
+    padding-bottom: 70px;
     background-color: white;
 }
 
@@ -112,20 +112,28 @@ body {
     display: flex;
     background-color: white;
     width: 100%;
+    padding-top: 20px;
     justify-content: space-between;
+    background-color: #f79321;
 }
 
 .foot-logo {
     display: flex;
+    translate: 20px;
 }
 
 .foot-logo img{
     height: 50px;
 }
 
+.footer ul {
+    padding-right: 30px;
+}
+
 .footer ul li {
     list-style: none;
 }
+
 
 .footer a {
     color: #242322;
