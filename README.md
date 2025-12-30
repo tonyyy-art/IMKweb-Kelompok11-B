@@ -9,9 +9,9 @@ https://tonyyy-art.github.io/IMKweb-Kelompok11-B
 ![page5](./image/design/42.jpg)
 
 Implementasi nyata
-![ss1](./image/screenshot/0.jpg)
-![ss1](./image/screenshot/1.jpg)
-![ss2](./image/screenshot/2.jpg)
-![ss3](./image/screenshot/3.jpg)
-![ss4](./image/screenshot/41.jpg)
+![ss1](./image/screenshot/mobile/0.jpg)
+![ss1](./image/screenshot/mobile/1.jpg)
+![ss2](./image/screenshot/mobile/2.jpg)
+![ss3](./image/screenshot/mobile/3.jpg)
+![ss4](./image/screenshot/mobile/41.jpg)
 
