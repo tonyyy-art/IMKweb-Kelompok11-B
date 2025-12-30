@@ -17,37 +17,39 @@
         </ul>
     </nav>
     <div class="header">
-        <div class="box-progres"><p>Order</p></div>
+        <div class="box-progres"><div class="progres1"><p>Order</p></div></div>
         <div class="box-progres"><p>Payment</p></div>
         <div class="box-progres"><p>Receipt</p></div>
     </div>
 
-    <div class="form">
-        <div class="box-input">
-            <label for="Nama">Nama</label>
-            <input type="text" class="input-text">
-        </div>
-        <div class="box-input">
-            <label for="NIM">NIM</label>
-            <input type="text" class="input-text">
-        </div>
-        <div class="box-input">
-            <label for="Phone">No Telp</label>
-            <input type="text">
-        </div>
-        <div class="box-input">
-            <label for="Size">Ukuran</label>
-            <select name="Size" id="sizeId">
-                <option disabled value>Pilih Ukuran</option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-            </select>
-        </div>
+    <div class="container">
+        <div class="form">
+            <div class="form-header"><h2>Personal Infomation</h2></div>
+            <div class="box-input">
+                <label for="Nama">Nama</label>
+                <input type="text" class="input-text">
+            </div>
+            <div class="box-input">
+                <label for="NIM">NIM</label>
+                <input type="text" class="input-text">
+            </div>
+            <div class="box-input">
+                <label for="Phone">No Telp</label>
+                <input type="text">
+            </div>
+            <div class="box-input">
+                <label for="Size">Ukuran</label>
+                <select name="Size" id="sizeId">
+                        <option disabled value>Pilih Ukuran</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                </select>
+            </div>
 
-        <div><button>Order</button></div>
+            <div class="button-box"><button class="order-button">Order</button></div>
     </div>
 
     <div class="produk-container">
@@ -59,8 +61,9 @@
             <div class="infor-header">
                 <span>Jaket Hitam 2025</span>
                 <span>150.000</span>
-            </div class="sub-info">
-                <span>Sub Tota</span>
+            </div >
+            <div class="sub-info">
+                <span>Sub Total</span>
                 <span>Rp 150.000</span>
             </div>
             <div class="sub-info">
@@ -73,7 +76,8 @@
             </div>
         </div>
     </div>
-
+        
+    </div>
 
 </body>
 </html>
