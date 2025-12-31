@@ -19,15 +19,16 @@ body {
     background-repeat: no-repeat;
     align-items: center;
     background-image: linear-gradient(to bottom left, #f09410, #bc430d);
+    min-height: max-content;
 }
 
 .navbar {
     display: flex;
-    position: relative;
     width: 100%;
     height: 50px;
     padding-top: 10px;
     background-color: #242322;
+    justify-content: space-between;
 }
 
 .nav-logo {
@@ -36,15 +37,12 @@ body {
 
 .nav-logo img{
     height: 100%;
-    width: auto;
-    display: block;
-    object-fit: contain;
 }
 
 .navbar ul {
     display: flex;
     align-items: center;
-    translate: 320%;
+    margin-right: 10px;
 }
 
 .navbar ul li {
@@ -62,12 +60,18 @@ body {
     color: #f79321;
 }
 
+.menu-button {
+    display: none;
+}
+
 
 .container {
-    position: relative;
     display: flex;
+    position: relative;
+    justify-content: center;
     flex-direction: column;
-    margin: 200px 500px 190px 10px;
+    min-height: 100vh;
+    padding-right: 100px;
 }
 
 .container-text {
@@ -91,14 +95,14 @@ body {
     }
 }
 
-.order-button::before, .order-button::after {
+.order-button::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     border-radius: 15px;
     background-image: conic-gradient(from var(--angle), transparent, #f79321);
-    translate: -163% 129%;
+    translate: -195% 129%;
     width: 155px;
     height: 45px;
     z-index: -1;
@@ -140,7 +144,6 @@ body {
 .footer {
     position: relative;
     display: flex;
-    background-color: white;
     width: 100%;
     padding-top: 20px;
     justify-content: space-between;
@@ -167,5 +170,147 @@ body {
 
 .footer a {
     color: #242322;
+}
+
+@media (max-width: 800px) {
+    .container {
+        padding: 0;
+        min-height: 70vh;
+        translate: -25% 0%;
+    }
+    .container-text {
+        width: 300px;
+    }
+    .order-button::before {
+        translate: -99% 260%;
+    }
+
+    .produk {
+        padding: 10px; 
+    }
+    .produk img {
+        width: 400px;
+    }
+
+    .footer {
+        justify-content: flex-start;
+    }
+
+    .foot-logo img{
+        height: 40px;
+    }
+
+    .footer ul {
+        font-size: small;
+        margin-left: 100px;
+    }
+
+    .sidebar{
+        width: 100%;
+    }
+
+    .menu-button {
+        display: flex;
+        align-items: center;
+    }
+    .hide-nav {
+        display: none;
+    }
+
+    
+
+}
+
+.sidebar {
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    z-index: 999;
+    height: 100%;
+    width: 40%;
+    background-color: #aef354;
+    right: 0;
+    animation: sidebar-animation .2s ease-in-out;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.137);;
+}
+
+@keyframes sidebar-animation {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.sidebar li {
+    list-style: none;
+    margin: 20px 20px;
+    width: max-content;
+    transition: .5s;
+}
+
+.sidebar li a{
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 15pt;
+    color: #e1ffc6;
+}
+
+.sidebar li:hover {
+    background-color: #e1ffc6;
+    border-radius: 20%;
+    a {
+        color: #aef354;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar {
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .container {
+        padding: 0;
+        min-height: 70vh;
+        translate: -25% 0%;
+    }
+    .container-text {
+        width: 250px;
+    }
+    .order-button::before {
+        translate: -83% 340%;
+    }
+
+    .produk {
+        padding: 10px; 
+    }
+
+    .image-box {
+        width: 350px;
+        translate: -40px;
+    }
+
+    .produk img {
+        width: 290px;
+    }
+
+    .footer {
+        width: 430px;
+        justify-content: flex-start;
+    }
+
+    .foot-logo img{
+        height: 40px;
+    }
+
+    .footer ul {
+        font-size: small;
+        margin-left: 100px;
+    }
+    
+    .sidebar{
+        width: 100%;
+    }
 }
 
